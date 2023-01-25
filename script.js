@@ -1,3 +1,3 @@
-import AddingPropertiesToPrimitives from "./AddingPropertiesToPrimitives.js";
+import experimentingWithClasses from "./experimentingWithClasses.js";
 
-AddingPropertiesToPrimitives();
+experimentingWithClasses();
