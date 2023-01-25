@@ -28,20 +28,6 @@ export default function practicingTypes() {
 
   console.log(typeof testObject);
 
-  // Detour embedding functions
-
-  // function testFunction() {
-  //   return "Test function returned this value.";
-  //   function embeddedFunction() {
-  //     return "Embedded function returned this value";
-  //   }
-  // }
-
-  // let anotherTest = new testFunction();
-  // console.log(anotherTest);
-
-  // console.log(anotherTest.embeddedFunction());
-
   console.log(typeof testObject.a); // Returns function
 
   // Type of functions
@@ -53,4 +39,36 @@ export default function practicingTypes() {
   logDog();
 
   console.log(typeof logDog);
+
+  class logCat {
+    constructor() {
+      this.legs = 4;
+      this.isLazy = true;
+    }
+    logVoice() {
+      console.log("Meow");
+    }
+  }
+
+  console.log(typeof logCat);
+
+  let misty = new logCat();
+  console.log(misty);
+  console.log(typeof misty);
+  console.log(misty.isLazy);
+  misty.logVoice();
 }
+
+// Detour embedding functions
+
+// function testFunction() {
+//   return "Test function returned this value.";
+//   function embeddedFunction() {
+//     return "Embedded function returned this value";
+//   }
+// }
+
+// let anotherTest = new testFunction();
+// console.log(anotherTest);
+
+// console.log(anotherTest.embeddedFunction());
