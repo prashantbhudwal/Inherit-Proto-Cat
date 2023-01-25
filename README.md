@@ -1,5 +1,5 @@
-# Inherit-Proto-Cat
+# dabbleWithJs
 
-In this repository I experiment with prototypes and inheritance in javascript.
+In this repository I experiment with javascript and its features.
 
-Each lesson chunk is separated as a function and can be imported and called as and when required.
+Although the repo is primarily for my personal use, I am still making it public so that you can still report issues and blunders.
