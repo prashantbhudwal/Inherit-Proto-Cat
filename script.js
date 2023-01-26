@@ -1,4 +1,3 @@
-import experimentingWithClasses from "./experimentingWithClasses.js";
+import usingFetchAPI from "./usingFetchAPI.js";
 
-experimentingWithClasses();
-// dabbleWithJsAgain
+usingFetchAPI();
