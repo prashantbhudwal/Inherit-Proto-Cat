@@ -4,50 +4,62 @@ export default function usingFetchAPI() {
     posts: "/posts",
     todos: "/todos",
   };
+  const scrimbaUrl = "https://scrimba.com/learn/frontend?topic=react";
 
-  // Function 1: This works
-  const fetchPosts = () => {
-    fetch(url.base + url.posts, { method: `GET` })
-      .then((response) => response.json())
-      .then((json) => {
-        return console.log(json.slice(0, 50));
-      });
+  const asyncProblems =
+    function problemsWithAsyncProgrammingWhileFetchingData() {
+      // Function 1: This works
+      const fetchPosts = () => {
+        fetch(url.base + url.posts, { method: `GET` })
+          .then((response) => response.json())
+          .then((json) => {
+            return console.log(json.slice(0, 50));
+          });
+      };
+      //   console.log(fetchPosts.name, "returns:", fetchPosts());
+
+      // Function 2
+      const fetchPostsAndReturn = () => {
+        //Does not work beacuse the function is returning nothing.
+        // The return in the final then, returns the value to the fetch function
+        //fetchPostsAndReturn returns nothing
+        fetch(url.base + url.posts, { method: `GET` })
+          .then((response) => response.json())
+          .then((json) => {
+            return json.slice(0, 50);
+          });
+      };
+
+      //   console.log(fetchPostsAndReturn.name, "returns:", fetchPostsAndReturn());
+
+      // Funnction 3: This works but feels wrong
+      let postObject = {};
+      const fetchPostsAndReturnPromise = () => {
+        return fetch(url.base + url.posts, { method: `GET` })
+          .then((response) => response.json())
+          .then((json) => {
+            return json.slice(0, 50);
+          });
+      };
+      fetchPostsAndReturnPromise().then((postObj) => console.log(postObj));
+      // This infact is just a rewritten version of Function 1
+      // And whatever you want to do after the object is recieved gas to be done inside the then block.
+      // A solution is either working with callbacks within callbacks
+      //Or async await
+    };
+
+  const testResponse = function testResponseInterface() {
+    let res = new Response();
+    //   res.body = "Put this in body"; // This does not work
+    console.log(res);
+    console.log(Response.error());
   };
-  //   console.log(fetchPosts.name, "returns:", fetchPosts());
 
-  // Function 2
-  const fetchPostsAndReturn = () => {
-    //Does not work beacuse the function is returning nothing.
-    // The return in the final then, returns the value to the fetch function
-    //fetchPostsAndReturn returns nothing
-    fetch(url.base + url.posts, { method: `GET` })
-      .then((response) => response.json())
-      .then((json) => {
-        return json.slice(0, 50);
-      });
+  const fetchScrimba = function fetchScrimbaAndGetBlockedByCORS() {
+    let scrimbaUrl = "https://scrimba.com/learn/frontend";
+    fetch(scrimbaUrl)
+      .then((res) => res.json())
+      .then((json) => console.log(json));
   };
-
-  //   console.log(fetchPostsAndReturn.name, "returns:", fetchPostsAndReturn());
-
-  // Funnction 3: This works but feels wrong
-  let postObject = {};
-  const fetchPostsAndReturnPromise = () => {
-    return fetch(url.base + url.posts, { method: `GET` })
-      .then((response) => response.json())
-      .then((json) => {
-        return json.slice(0, 50);
-      });
-  };
-  //   fetchPostsAndReturnPromise().then((postObj) => console.log(postObj));
-  // This infact is just a rewritten version of Function 1
-  // And whatever you want to do after the object is recieved gas to be done inside the then block.
-  // A solution is either working with callbacks within callbacks
-  //Or async await
-
-  // Testing Response Interface of Fetch
-  console.log("LogDog");
-  let res = new Response();
-  //   res.body = "Put this in body"; // This does not work
-  console.log(res);
-  console.log(Response.error());
+  fetchScrimba();
 }
