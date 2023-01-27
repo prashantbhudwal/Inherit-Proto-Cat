@@ -1,3 +1,2 @@
-import usingFetchAPI from "./usingFetchAPI.js";
-
-usingFetchAPI();
+import learnCallbacks from "./learnCallbacks.js";
+learnCallbacks();
