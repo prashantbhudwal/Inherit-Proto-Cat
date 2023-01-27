@@ -61,5 +61,12 @@ export default function usingFetchAPI() {
       .then((res) => res.json())
       .then((json) => console.log(json));
   };
-  fetchScrimba();
+  const fetchPokemon = function tryingPokemonAPI() {
+    let url = "https://pokeapi.co/api/v2/pokemon/ditto";
+    fetch(url)
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  };
+
+  fetchPokemon();
 }
