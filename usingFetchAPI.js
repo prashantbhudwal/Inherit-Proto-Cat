@@ -4,8 +4,7 @@ export default function usingFetchAPI() {
     posts: "/posts",
     todos: "/todos",
   };
-  //-------------------------
-  //-------------------------
+
   // Function 1: This works
   const fetchPosts = () => {
     fetch(url.base + url.posts, { method: `GET` })
@@ -15,8 +14,7 @@ export default function usingFetchAPI() {
       });
   };
   //   console.log(fetchPosts.name, "returns:", fetchPosts());
-  //-------------------------
-  //-------------------------
+
   // Function 2
   const fetchPostsAndReturn = () => {
     //Does not work beacuse the function is returning nothing.
@@ -30,8 +28,7 @@ export default function usingFetchAPI() {
   };
 
   //   console.log(fetchPostsAndReturn.name, "returns:", fetchPostsAndReturn());
-  //-------------------------
-  //-------------------------
+
   // Funnction 3: This works but feels wrong
   let postObject = {};
   const fetchPostsAndReturnPromise = () => {
@@ -41,9 +38,16 @@ export default function usingFetchAPI() {
         return json.slice(0, 50);
       });
   };
-  fetchPostsAndReturnPromise().then((postObj) => console.log(postObj));
+  //   fetchPostsAndReturnPromise().then((postObj) => console.log(postObj));
   // This infact is just a rewritten version of Function 1
   // And whatever you want to do after the object is recieved gas to be done inside the then block.
+  // A solution is either working with callbacks within callbacks
+  //Or async await
+
+  // Testing Response Interface of Fetch
+  console.log("LogDog");
+  let res = new Response();
+  //   res.body = "Put this in body"; // This does not work
+  console.log(res);
+  console.log(Response.error());
 }
-// A solution is either working with callbacks within callbacks
-//Or async await
