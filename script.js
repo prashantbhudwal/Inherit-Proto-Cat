@@ -1,2 +1,2 @@
-import learnCallbacks from "./learnCallbacks.js";
-learnCallbacks();
+import goFromCallbacksToPromises from "./goFromCallbacksToPromises.js";
+goFromCallbacksToPromises();
