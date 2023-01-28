@@ -5,15 +5,6 @@ export default function goFromCallbacksToPromises() {
     todos: "/todos",
   };
 
-  const callbackBasics = function () {
-    const dog = `logDog`;
-    const cat = `logCat`;
-    setTimeout(() => {
-      console.log(dog);
-    }, 3000);
-    console.log(test);
-  };
-
   const asyncProblems =
     function problemsWithAsyncProgrammingWhileFetchingData() {
       const fetchPosts = () => {
@@ -69,4 +60,39 @@ export default function goFromCallbacksToPromises() {
       fetchPosts(filterCallback, logCallback)
     );
   };
+
+  const iPromise = function basicsOfPromises() {
+    const fetchPosts = () => {
+      return fetch(url.base + url.posts, { method: `GET` })
+        .then((response) => response.json())
+        .then((json) => json.slice(0, 50));
+    };
+
+    const promiseObject = fetchPosts(); //fetposts Returns a promise
+    promiseObject.then(console.log("I Executed!")); // I can resolve this promise with a then block
+    //That means I can do this now.
+    // I can write declare the functions to the executed one by one
+    const filterArray = function getArraysOfPostsWithOddIds(posts) {
+      let newArray = posts.filter((post) => post.id % 2 === 0);
+      return newArray;
+    };
+    const logJson = function logPostJson(json) {
+      console.log(json);
+    };
+
+    // I can resolve the promise with .then()
+    // Pass the functions one by one
+    const OddArray = promiseObject.then((response) => filterArray(response));
+    OddArray.then((array) => logJson(array));
+    //I can also chain everything and make everything shorter.
+    //And this gives the same result.
+    fetchPosts()
+      .then((array) => filterArray(array))
+      .then((filteredArray) => logJson(filteredArray));
+    //I can make this even shorter. The then does the passing automatically.
+    //I get the same result again.
+    fetchPosts().then(filterArray).then(logJson);
+  };
+
+  iPromise();
 }
