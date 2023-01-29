@@ -2,7 +2,6 @@ export default function goFromCallbacksToPromises() {
   const url = {
     base: "https://apis.scrimba.com/jsonplaceholder",
     posts: "/posts",
-    todos: "/todos",
   };
 
   const asyncProblems =
@@ -11,7 +10,7 @@ export default function goFromCallbacksToPromises() {
         fetch(url.base + url.posts, { method: `GET` })
           .then((response) => response.json())
           .then((json) => console.log(json.slice(0, 50)));
-        // F*%K single reponsibility principle.
+        // F*%K single responsibility principle.
       };
       console.log(fetchPosts.name, "returns:", fetchPosts());
     };
@@ -34,7 +33,7 @@ export default function goFromCallbacksToPromises() {
     // It still returns undefined, but the objective of separating logging from fetching is removed.
   };
 
-  const callbackHell = function callbacksWithinCallbackwithinCallbacks() {
+  const callbackHell = function callbacksWithinCallbackWithinCallbacks() {
     // What if instead of logging the data, I have to filter the data to get posts at only odd ids.
 
     const logCallback = function consoleLogWithCallbackFunction(json) {
@@ -68,7 +67,7 @@ export default function goFromCallbacksToPromises() {
         .then((json) => json.slice(0, 50));
     };
 
-    const promiseObject = fetchPosts(); //fetposts Returns a promise
+    const promiseObject = fetchPosts(); //fetchPosts() Returns a promise
     promiseObject.then(console.log("I Executed!")); // I can resolve this promise with a then block
     //That means I can do this now.
     // I can write declare the functions to the executed one by one
@@ -93,6 +92,8 @@ export default function goFromCallbacksToPromises() {
     //I get the same result again.
     fetchPosts().then(filterArray).then(logJson);
   };
-
-  iPromise();
+  const buildPromise = function buildAPromiseFromScratch() {
+    console.log("logdog");
+  };
+  buildPromise();
 }
