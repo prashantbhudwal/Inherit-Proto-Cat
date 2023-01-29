@@ -2,4 +2,4 @@
 
 In this repository I experiment with javascript and its features.
 
-Although the repo is primarily for my personal use, I am still making it public so that you can still report issues and blunders.
+This is written in the style of an article that I can comeback and read later. Hence a lot of comments that guide me from one line to another. And, very very long function names.
