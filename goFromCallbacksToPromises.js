@@ -26,7 +26,7 @@ export default function goFromCallbacksToPromises() {
       fetch(url.base + url.posts, { method: `GET` })
         .then((response) => response.json())
         .then((json) => callbackFunction(json.slice(0, 50)));
-      //   I call the callback function to console log. Single repsonsibility principle.
+      //   I call the callback function to console log. Single responsibility principle.
     };
     // I run the function by passing the callback I defined at line 35 as an argument
     console.log(fetchPosts.name, "returns:", fetchPosts(logCallback));

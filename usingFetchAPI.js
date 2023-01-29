@@ -20,7 +20,7 @@ export default function usingFetchAPI() {
 
       // Function 2
       const fetchPostsAndReturn = () => {
-        //Does not work beacuse the function is returning nothing.
+        //Does not work beacause the function is returning nothing.
         // The return in the final then, returns the value to the fetch function
         //fetchPostsAndReturn returns nothing
         fetch(url.base + url.posts, { method: `GET` })
@@ -32,7 +32,7 @@ export default function usingFetchAPI() {
 
       //   console.log(fetchPostsAndReturn.name, "returns:", fetchPostsAndReturn());
 
-      // Funnction 3: This works but feels wrong
+      // Function 3: This works but feels wrong
       let postObject = {};
       const fetchPostsAndReturnPromise = () => {
         return fetch(url.base + url.posts, { method: `GET` })
@@ -42,8 +42,8 @@ export default function usingFetchAPI() {
           });
       };
       fetchPostsAndReturnPromise().then((postObj) => console.log(postObj));
-      // This infact is just a rewritten version of Function 1
-      // And whatever you want to do after the object is recieved gas to be done inside the then block.
+      // This in fact is just a rewritten version of Function 1
+      // And whatever you want to do after the object is received gas to be done inside the then block.
       // A solution is either working with callbacks within callbacks
       //Or async await
     };

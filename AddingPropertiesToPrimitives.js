@@ -45,6 +45,6 @@ export default function AddingPropertiesToPrimitives() {
   // This works
   console.log(dogString.dogObject.lionProperty);
 
-  //The prototype traversal makes this possibel.
+  //The prototype traversal makes this possible.
   //In Js the prototype ensures inheritance.
 }
