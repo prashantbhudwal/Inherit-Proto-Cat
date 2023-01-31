@@ -1,2 +1,2 @@
-import goFromCallbacksToPromises from "./goFromCallbacksToPromises.js";
-goFromCallbacksToPromises();
+import makingPromisesNotFound from "./asyncJs/makingPromisesNotFound.js";
+makingPromisesNotFound();
