@@ -1,0 +1,23 @@
+{
+  "name": "dabblewithjs",
+  "version": "1.0.0",
+  "description": "In this repository I experiment with javascript and its features.",
+  "main": "addingPropertiesToPrimitives.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashantbhudwal/Inherit-Proto-Cat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prashantbhudwal/Inherit-Proto-Cat/issues"
+  },
+  "homepage": "https://github.com/prashantbhudwal/Inherit-Proto-Cat#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
