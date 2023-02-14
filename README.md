@@ -4,6 +4,8 @@ In this repository I experiment with javascript and its features.
 
 This is written in the style of an article that I can comeback and read later. Hence a lot of comments that guide me from one line to another. And, very very long function names.
 
+Since I have moved to Ts from Js, all the future dabbles will live in dabbleWithTs folder of this repo.
+
 ## Typescript
 
 The repo also includes typescript code.

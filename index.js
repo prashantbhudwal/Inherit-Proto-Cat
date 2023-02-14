@@ -1,3 +1,3 @@
-import learnTsFunctions from "./build/learnTsFunctions.js";
+import destructBasics from "./build/destructuring/destructuringBasics.js";
 
-learnTsFunctions();
+destructBasics();
