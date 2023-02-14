@@ -1,3 +1,3 @@
-import destructBasics from "./build/destructuring/destructuringBasics.js";
+import learnMap from "./build/map/learnMap.js";
 
-destructBasics();
+learnMap();
