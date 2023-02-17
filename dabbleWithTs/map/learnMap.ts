@@ -39,5 +39,5 @@ return: ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
   const pokePara = pokemon.map((pokemon) => {
     return `<p>${pokemon}</p>`;
   });
-  console.log(pokePara);
+  console.log(pokePara); 
 }
