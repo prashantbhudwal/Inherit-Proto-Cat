@@ -5,7 +5,7 @@ function errorHandling() {
   const incorrectUrl =
     "https://www.thecolorapi.com/scheme?hex=283848&mode=monchrome-dark&count=6";
 
-  /** Error handling in .then */
+  /** Error handling in .then 
   fetch(incorrectUrl)
     .then((response) => {
       console.log(response);
@@ -29,6 +29,23 @@ function errorHandling() {
       console.log("🟡 Error in mapping the json");
       console.log(error);
     });
+
+*/
+
+  /** Error handling in async await */
+
+  const colorFetcher = async function () {
+    try {
+      const response = await fetch(incorrectUrl);
+      return response;
+    } catch (error) {
+      console.log("🔴 Error in receiving the response:");
+      console.log(error);
+    }
+  };
+
+  colorFetcher();
+  colorFetcher().then((data) => console.log(data));
 }
 
 errorHandling();
