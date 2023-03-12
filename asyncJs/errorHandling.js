@@ -42,6 +42,7 @@ function errorHandling() {
       console.log(json);
       return json.colors;
     } catch (error) {
+      // Report to Sentry here
       console.log("🔴 Error in receiving the response:");
       console.log(error);
     }
