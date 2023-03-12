@@ -36,16 +36,20 @@ function errorHandling() {
 
   const colorFetcher = async function () {
     try {
-      const response = await fetch(incorrectUrl);
-      return response;
+      const response = await fetch(url);
+      console.log(response);
+      const json = await response.json();
+      console.log(json);
+      return json.colors;
     } catch (error) {
       console.log("🔴 Error in receiving the response:");
       console.log(error);
     }
   };
-
-  colorFetcher();
-  colorFetcher().then((data) => console.log(data));
+  const data = colorFetcher();
+  console.log(data);
+  data.then((data) => console.log(data));
+  //   colorFetcher().then((data) => console.log(data));
 }
 
 errorHandling();
