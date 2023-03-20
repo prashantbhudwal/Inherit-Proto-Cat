@@ -42,9 +42,36 @@ const cloneAPerson = (person) => {
   return clone;
 };
 
-const cloneJohn = cloneAPerson(john);
-const cloneAbramov = cloneAPerson(abramov);
-console.log(john.records.name);
-console.log(cloneJohn.records.name);
-console.log(abramov.records.name);
-console.log(cloneAbramov.records.name);
+const mandal = {
+  name: "Mandal",
+  age: 30,
+  address: "lorem",
+  hobbies: ["cricket", "tennis", "swimming"],
+  isMarried: false,
+  sayHello: function () {
+    console.log("Hello Mandal");
+  },
+  records: {
+    name: "Mandal",
+  },
+};
+
+const mohila = {
+  name: "Mohila",
+  age: 30,
+  address: "lorem",
+  hobbies: ["cricket", "tennis", "swimming"],
+  isMarried: false,
+  sayHello: function () {
+    console.log("Hello Mohila");
+  },
+  records: {
+    name: "Mohila",
+  },
+};
+
+// Deep copy
+const deepCloneMandal = _.cloneDeep(mandal);
+const deepCloneMohila = _.cloneDeep(mohila);
+console.log(deepCloneMandal);
+console.log(deepCloneMohila);
