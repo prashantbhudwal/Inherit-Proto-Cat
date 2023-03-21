@@ -10,12 +10,12 @@ Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has
 
 
 function getIndexToIns(arr, num) {
-arr.sort() //LO
-const greaterItem = arr.find(item=> item >= num )
-if(greaterItem === undefined) return arr.length;
-else{
-const index = arr.indexOf(greaterItem);
-return index <= 0 ? 0: index;
-}
+  arr.sort((a, b) => a - b);
+  const greaterItem = arr.find((item) => item >= num);
+  if (greaterItem === undefined) return arr.length;
+  else {
+    const index = arr.indexOf(greaterItem);
+    return index <= 0 ? 0 : index;
+  }
 }
 console.log(getIndexToIns([5,3,20,3], 5));
